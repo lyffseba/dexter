@@ -3,11 +3,7 @@ Autoresearch Pretraining Script - Mojo Port
 Translating the nano-GPT PyTorch implementation to Mojo.
 """
 
-from tensor import Tensor
-from math import math
-
 # Define the model configuration as a strict Mojo struct
-@value
 struct GPTConfig:
     var sequence_len: Int
     var vocab_size: Int
@@ -16,7 +12,7 @@ struct GPTConfig:
     var n_kv_head: Int
     var n_embd: Int
     
-    fn __init__(inout self):
+    fn __init__(out self):
         self.sequence_len = 2048
         self.vocab_size = 32768
         self.n_layer = 12
