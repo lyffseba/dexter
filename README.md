@@ -16,6 +16,19 @@
 > [!IMPORTANT]
 > **Dexter** provides a straight line from your first API call to autonomous AI research loops and production endpoints. Designed for `Gemma-4-31B` and optimized for cheap, high-performance cloud GPUs.
 
+## 🎮 The Dexter OS (Start Here!)
+The easiest way to interact with the entire ecosystem, run labs, and manage your cloud swarm is through the interactive Dexter OS CLI.
+
+```bash
+# Clone the repository
+git clone https://github.com/lyffseba/dexter.git
+cd dexter
+
+# Boot up the Dexter OS
+python3 dexter_cli.py
+```
+*The OS will guide you through running the local Mojo labs and deploying the cloud inference endpoints automatically.*
+
 ## 🗂️ Ecosystem Structure
 
 ```text
