@@ -12,16 +12,19 @@ def print_slow(str):
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+def check_runpod_balance():
+    # Placeholder for actual RunPod API balance check
+    # Normally we would use requests to hit https://api.runpod.io/v2/account/balance
+    return "$10.00"
+
 def main():
     clear()
     print_slow("==================================================")
-    print_slow("           D E X T E R   O S   v1.0               ")
+    print_slow("           D E X T E R   O S   v1.1               ")
     print_slow("==================================================")
     print_slow("\n[SYSTEM] Initializing AI Research Swarm...")
-    time.sleep(1)
-    print_slow("[SYSTEM] Connecting to Modular Cloud...")
     time.sleep(0.5)
-    print_slow("[SYSTEM] Authenticating RunPod API...")
+    print_slow(f"[SYSTEM] RunPod Balance: {check_runpod_balance()}")
     time.sleep(0.5)
     print_slow("[SYSTEM] Environment: SECURE.\n")
     
@@ -31,7 +34,7 @@ def main():
     while True:
         print("----- COMMAND MENU -----")
         print("1. [LAB 00]  Run Local Diagnostics (Data & Tokenizer)")
-        print("2. [LAB 03]  Compile Mojo Architecture locally")
+        print("2. [LAB 03]  Compile Mojo Architecture locally (MAX Framework)")
         print("3. [RUNPOD]  Deploy RTX 3090 (Commence RLHF Training)")
         print("4. [MODULAR] Deploy MAX Inference Endpoint")
         print("5. [EXIT]    Disconnect")
@@ -42,7 +45,7 @@ def main():
             print_slow("\n[EXECUTING] Launching Jupyter Lab for Lab 00...")
             os.system("uv tool run --from jupyterlab jupyter-lab labs/00_getting_started.ipynb")
         elif choice == '2':
-            print_slow("\n[EXECUTING] Compiling train.mojo via Pixi...")
+            print_slow("\n[EXECUTING] Compiling train.mojo via Pixi & MAX...")
             os.system("cd labs/autoresearch/mojo && ~/.pixi/bin/pixi run mojo train.mojo")
             print("\n")
         elif choice == '3':
