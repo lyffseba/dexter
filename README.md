@@ -1,4 +1,4 @@
-# AI Cloud Lab 🚀
+# Dexter 🚀
 
 This repository contains everything needed to spin up, run, and fine-tune Large Language Models (like `google/gemma-4-31B`) on cheap, high-performance cloud GPUs.
 
