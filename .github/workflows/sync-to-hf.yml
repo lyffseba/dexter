@@ -10,22 +10,16 @@ jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           lfs: true
+
+      - name: Install huggingface_hub
+        run: pip install huggingface_hub[cli]
+
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          # Configure Git
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          
-          # Add the Hugging Face repository as a remote
-          # Change <YOUR_HF_USERNAME> to your actual Hugging Face username!
-          # Type can be "spaces", "models", or "datasets". We use "models" here.
-          git remote add huggingface https://user:$HF_TOKEN@huggingface.co/lyffseba/dexter
-          
-          # Force push to the Hugging Face remote
-          git push -f huggingface main
+          hf upload lyffseba/dexter . --repo-type model --exclude "labs/autoresearch/.venv/*" --exclude "labs/autoresearch/mojo/.pixi/*" --exclude ".git/*" --exclude ".github/*"
