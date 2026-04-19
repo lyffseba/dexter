@@ -25,7 +25,7 @@ jobs:
           # Add the Hugging Face repository as a remote
           # Change <YOUR_HF_USERNAME> to your actual Hugging Face username!
           # Type can be "spaces", "models", or "datasets". We use "models" here.
-          git remote add huggingface https://user:$HF_TOKEN@huggingface.co/models/<YOUR_HF_USERNAME>/dexter
+          git remote add huggingface https://user:$HF_TOKEN@huggingface.co/lyffseba/dexter
           
           # Force push to the Hugging Face remote
           git push -f huggingface main
