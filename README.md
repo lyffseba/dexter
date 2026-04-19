@@ -37,6 +37,7 @@ Now you can interact with the model via Python or using a UI!
 ## 🔬 Tinkering & Fine-Tuning Labs
 
 Check the `labs/` directory for Jupyter Notebooks designed to let you play with the model.
+- **[START HERE]** `labs/00_getting_started.ipynb`: An interactive, local introduction to AI data, tokenizers, and compiling Mojo. Start here to learn the fundamentals!
 - `labs/01_inference_test.ipynb`: Test prompting and generating text.
 - `labs/02_qlora_finetuning.ipynb`: Learn how to fine-tune Gemma-4-31B on your own custom data using LoRA.
 - `labs/autoresearch/`: An autonomous AI agent loop that tweaks LLM architectures. Includes the ongoing project to port the framework to **Mojo & MAX**.
