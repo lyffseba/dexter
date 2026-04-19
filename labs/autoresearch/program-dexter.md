@@ -6,9 +6,10 @@ This is a meta-experiment. The goal is to have the LLM agent autonomously improv
 
 To set up a new improvement cycle, work with the user to:
 
-1. **Agree on a feature**: Propose a new feature for `dexter_cli.py` or a new lab (e.g., adding an API call to check RunPod balance, adding ASCII art, adding a new RLHF training script).
-2. **Read the in-scope files**: Read the files you are modifying (`dexter_cli.py`, `README.md`, or the `labs/` directory).
-3. **Confirm and go**: Confirm the plan with the Director.
+1. **Initialization**: Check if the agent is running in a fresh clone. If so, immediately read `CHEATSHEET.md` and `README.md` to understand the ecosystem.
+2. **Agree on a feature**: Propose a new feature for `dexter_cli.py` or a new lab (e.g., adding an API call to check RunPod balance, adding ASCII art, adding a new RLHF training script).
+3. **Read the in-scope files**: Read the files you are modifying (`dexter_cli.py`, `README.md`, or the `labs/` directory).
+4. **Confirm and go**: Confirm the plan with the Director.
 
 ## Experimentation
 
