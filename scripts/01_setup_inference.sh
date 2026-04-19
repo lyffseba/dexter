@@ -9,8 +9,8 @@ pip install --upgrade pip
 # Install huggingface hub for downloading
 pip install "huggingface_hub[cli]"
 
-# Install vLLM for ultra-fast serving and memory management
-pip install vllm
+# Install max for ultra-fast serving and memory management
+curl -sL https://modular.com/max/install | bash
 
 # Login to HuggingFace (Requires HF_TOKEN environment variable)
 if [ -z "$HF_TOKEN" ]; then

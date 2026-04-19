@@ -2,42 +2,29 @@
 
 This repository contains everything needed to spin up, run, and fine-tune Large Language Models (like `google/gemma-4-31B`) on cheap, high-performance cloud GPUs.
 
-## 🌟 The Best Platform: RunPod
+## 🌟 The Best Platform: Modular Cloud
 
-For cost-to-performance, **RunPod.io** is currently the best platform. You can rent an RTX 3090 (24GB) or RTX 4090 (24GB) for ~$0.20 to $0.40 per hour, which is perfect for running the 31B model in 4-bit, or an A6000 (48GB) to run it in 8-bit.
+For cost-to-performance, **Modular Cloud** is currently the best platform. They have the fastest inference speeds for Gemma 4 using MAX, their GenAI native modeling & serving framework, completely outperforming vLLM on both NVIDIA and AMD platforms.
 
 ---
 
-## 🛠️ Getting Started on RunPod
+## 🛠️ Getting Started on Modular Cloud
 
 ### 1. Account Setup
-1. Go to [RunPod.io](https://www.runpod.io) and create an account.
-2. Add a few dollars in billing credits (e.g., $10).
-3. Go to **Deploy -> Secure Cloud**.
-
-### 2. Spinning up the Instance
-1. Select a GPU: 
-   - **1x RTX 3090 / 4090 (24GB VRAM)** (Good for 4-bit)
-   - **1x A6000 / RTX 6000 Ada (48GB VRAM)** (Best for 8-bit / Fine-tuning)
-2. Select Template: `RunPod PyTorch 2.x` (or type "PyTorch" in the search bar).
-3. Ensure you allocate at least **60 GB of Volume Disk** to hold the model weights.
-4. Click **Deploy**.
-
-### 3. Accessing the Workspace
-Once deployed, click **Connect**. You will have access to a Jupyter Lab environment.
-Open a Terminal inside Jupyter Lab and clone this repository (or just copy the setup scripts).
+1. Go to [Modular Console](https://console.modular.com) and sign up.
+2. Modular Cloud gives you a straight line from first API call to production endpoint.
 
 ---
 
 ## 🚀 Running Gemma-4-31B (Inference)
 
-Inside your RunPod terminal, run the setup script:
+Inside your environment, install the Modular CLI and MAX:
 
 ```bash
 bash scripts/01_setup_inference.sh
 ```
 
-Then start the OpenAI-compatible server using vLLM:
+Then start the MAX engine server:
 
 ```bash
 bash scripts/02_start_server.sh
