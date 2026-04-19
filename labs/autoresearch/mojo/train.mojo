@@ -3,6 +3,8 @@ Autoresearch Pretraining Script - Mojo Port
 Translating the nano-GPT PyTorch implementation to Mojo.
 """
 
+from std.collections import List
+
 # Define the model configuration as a strict Mojo struct
 struct GPTConfig:
     var sequence_len: Int
@@ -21,9 +23,17 @@ struct GPTConfig:
         self.n_embd = 768
 
 fn main():
-    print("🚀 Initializing Mojo Autoresearch Port...")
+    print("🚀 Initializing Mojo Autoresearch Port via Modular MAX...")
     
     var config = GPTConfig()
     print("Model Configured. Sequence Length:", config.sequence_len)
+    print("Vocab Size:", config.vocab_size)
+    print("Embedding Dim:", config.n_embd)
     
-    # TODO: Implement Tensor allocation and CausalSelfAttention block
+    # Initialize a dummy sequence
+    var seq = List[Int]()
+    for i in range(config.sequence_len):
+        seq.append(i % config.vocab_size)
+        
+    print("Successfully initialized input sequence of length:", len(seq))
+    print("Ready to implement CausalSelfAttention via SIMD!")
