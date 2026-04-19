@@ -1,0 +1,31 @@
+name: Sync to Hugging Face
+
+on:
+  push:
+    branches: [main]
+  # to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  sync-to-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          lfs: true
+      - name: Push to hub
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          # Configure Git
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          
+          # Add the Hugging Face repository as a remote
+          # Change <YOUR_HF_USERNAME> to your actual Hugging Face username!
+          # Type can be "spaces", "models", or "datasets". We use "models" here.
+          git remote add huggingface https://user:$HF_TOKEN@huggingface.co/models/<YOUR_HF_USERNAME>/dexter
+          
+          # Force push to the Hugging Face remote
+          git push -f huggingface main
